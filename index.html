@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie App</title>
+    <title>Simple Movie Manager</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -12,74 +12,38 @@
   </head>
   <body>
     <div class="puzzle-bg"></div>
-    <main>
-      <div class="heading-container">
-        <div class="heading-wrapper">
-          <i class="fas fa-film film-icon"></i>
-          <h1>Movie Manager</h1>
-        </div>
-      </div>
-      <section>
-        <form action="">
-          <fieldset>
-            <legend>Movie Details</legend>
-            <div class="form-group">
-              <label for="movieName">Movie Name</label>
-              <input
-                type="text"
-                id="movieName"
-                placeholder="Enter movie name"
-              />
-            </div>
-            <div class="form-group">
-              <label for="genre">Genre</label>
-              <input type="text" id="genre" placeholder="Enter genre" />
-            </div>
-            <div class="form-group">
-              <label for="releaseDate">Release Date</label>
-              <input type="date" id="releaseDate" name="releaseDate" />
-            </div>
-            <div class="form-group">
-              <label for="movieDesc">Movie Description</label>
-              <textarea
-                id="movieDesc"
-                name="desc"
-                placeholder="Enter movie description"
-              ></textarea>
-            </div>
-            <div class="form-group">
-              <label class="upload-label" for="imageUpload">
-                <i class="fas fa-cloud-upload-alt"></i>
-                <span>Click to upload movie poster</span>
-              </label>
-              <input
-                type="file"
-                id="imageUpload"
-                name="image"
-                accept="image/*"
-                class="image-upload"
-              />
-            </div>
-          </fieldset>
-          <button type="submit">Add Movie</button>
-        </form>
-      </section>
 
-      <section id="movies-list">
-        <table class="movies-table">
-          <thead>
-            <tr>
-              <th>Movie</th>
-              <th>Genre</th>
-              <th>Release Date</th>
-              <th>Description</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="movies-table-body"></tbody>
-        </table>
-      </section>
+    <main>
+      <h1>Movie Manager</h1>
+
+      <form id="movieForm">
+        <label>Movie Name <input type="text" id="movieName" required /></label>
+        <label>Genre <input type="text" id="genre" required /></label>
+        <label
+          >Release Date <input type="date" id="releaseDate" required
+        /></label>
+        <label>Description <textarea id="movieDesc" required></textarea></label>
+        <label
+          >Poster <input type="file" id="imageUpload" accept="image/*"
+        /></label>
+        <button type="submit">Add Movie</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Poster</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="movies-table-body"></tbody>
+      </table>
     </main>
+
     <script src="script.js"></script>
   </body>
 </html>
